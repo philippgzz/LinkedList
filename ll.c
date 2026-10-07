@@ -18,11 +18,6 @@ void ll_init(LL *list) {
 bool ll_push_front(LL *list, double value) {
     LLNode *node = malloc(sizeof(*node));
 
-    if (node == NULL)
-    {
-        return false;
-    }
-
     node->value = value;
     node->next = list->head;
     list->head = node;
@@ -33,11 +28,6 @@ bool ll_push_front(LL *list, double value) {
 bool ll_push_back(LL *list, double value) {
     LLNode *node = malloc(sizeof(*node));
     LLNode *current;
-
-    if (node == NULL)
-    {
-        return false;
-    }
 
     node->value = value;
     node->next = NULL;
@@ -62,15 +52,7 @@ bool ll_push_back(LL *list, double value) {
 bool ll_pop_front(LL *list, double *out_value) {
     LLNode *node = list->head;
 
-    if (node == NULL)
-    {
-        return false;
-    }
-
-    if (out_value != NULL)
-    {
-        *out_value = node->value;
-    }
+    *out_value = node->value;
 
     list->head = node->next;
     free(node);
@@ -81,11 +63,6 @@ bool ll_pop_front(LL *list, double *out_value) {
 bool ll_pop_back(LL *list, double *out_value) {
     LLNode *current = list->head;
     LLNode *previous = NULL;
-
-    if (current == NULL)
-    {
-        return false;
-    }
 
     while (current->next != NULL)
     {
