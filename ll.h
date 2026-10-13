@@ -16,8 +16,9 @@ typedef struct {
 
 void ll_init(LL *list);
 bool ll_push_front(LL *list, double value);
-bool ll_push_back(LL *list, double value);
-bool ll_pop_front(LL *list, double *out_value);
-bool ll_pop_back(LL *list, double *out_value);
+bool ll_push_back( LL *list, double value);
+bool ll_pop_front( LL *list, double *out_value);
+bool ll_pop_back(  LL *list, double *out_value);
+void ll_clear(LL *list);
 
 #endif

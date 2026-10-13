@@ -86,3 +86,10 @@ bool ll_pop_back(LL *list, double *out_value) {
 
     return true;
 }
+
+void ll_clear(LL *list) {
+    double value;
+
+    while (ll_pop_front(list, &value)) {
+    }
+}
