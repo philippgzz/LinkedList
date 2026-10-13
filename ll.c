@@ -5,18 +5,12 @@
 #include "ll.h"
 #include <stdlib.h>
 
-struct LLNode {
-    double value;
-    LLNode *next;
-};
-
-
 void ll_init(LL *list) {
     list->head = NULL;
 }
 
 bool ll_push_front(LL *list, double value) {
-    LLNode *node = malloc(sizeof(*node));
+    ll_node *node = malloc(sizeof(*node));
 
     node->value = value;
     node->next = list->head;
@@ -26,8 +20,7 @@ bool ll_push_front(LL *list, double value) {
 }
 
 bool ll_push_back(LL *list, double value) {
-    LLNode *node = malloc(sizeof(*node));
-    LLNode *current;
+    ll_node *node = malloc(sizeof(*node));
 
     node->value = value;
     node->next = NULL;
@@ -37,7 +30,7 @@ bool ll_push_back(LL *list, double value) {
         return true;
     }
 
-    current = list->head;
+    ll_node *current = list->head;
 
     while (current->next != NULL)
     {
@@ -50,7 +43,7 @@ bool ll_push_back(LL *list, double value) {
 }
 
 bool ll_pop_front(LL *list, double *out_value) {
-    LLNode *node = list->head;
+    ll_node *node = list->head;
 
     *out_value = node->value;
 
@@ -61,8 +54,8 @@ bool ll_pop_front(LL *list, double *out_value) {
 }
 
 bool ll_pop_back(LL *list, double *out_value) {
-    LLNode *current = list->head;
-    LLNode *previous = NULL;
+    ll_node *current = list->head;
+    ll_node *previous = NULL;
 
     while (current->next != NULL)
     {
@@ -85,6 +78,23 @@ bool ll_pop_back(LL *list, double *out_value) {
     free(current);
 
     return true;
+}
+
+bool ll_find(LL *list, double value, uint32_t *out_index) {
+    ll_node *current = list->head;
+    uint32_t index = 0;
+
+    while (current != NULL) {
+        if (current->value == value) {
+            *out_index = index;
+            return true;
+        }
+
+        current = current->next;
+        index++;
+    }
+
+    return false;
 }
 
 void ll_clear(LL *list) {
