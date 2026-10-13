@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include "ll.h"
+#include "time.h"
 
 int main(void) {
     LL list;
     double value;
+
 
     printf("Test\n");
     printf("====\n\n");
@@ -34,9 +36,22 @@ int main(void) {
         printf("Letztes Element entfernt: %.2f\n", value);
     }
 
-    if (!ll_pop_front(&list, &value)) {
-        printf("Liste ist leer.\n");
+    printf("\nGeschwindigkeitstest\n");
+    printf("====================\n");
+
+    ll_init(&list);
+
+    clock_t start = clock();
+
+    for (int i = 0; i < 100000; i++) {
+        ll_push_back(&list, i);
     }
+
+    clock_t ende = clock();
+
+    double zeit = (double)(ende - start) / CLOCKS_PER_SEC;
+
+    printf("Zeit: %.3f Sekunden\n", zeit);
 
     return 0;
 }
