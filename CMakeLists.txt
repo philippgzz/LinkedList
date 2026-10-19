@@ -5,4 +5,6 @@ set(CMAKE_C_STANDARD 11)
 
 add_executable(LinkedList main.c
         ll.h
-        ll.c)
+        ll.c
+        dll.c
+        dll.h)
