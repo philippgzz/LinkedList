@@ -8,5 +8,8 @@ add_executable(LinkedList
         main.c
         ll/ll.c
         dll/dll.c
+)
+
+add_executable(bitoperationen
         bitoperationen/main.c
 )
