@@ -70,7 +70,6 @@ int main(void) {
 
     dll_clear(&dll_list);
 
-
     printf("\nGeschwindigkeitstest: 100000-mal push_back\n");
     printf("==========================================\n");
 
