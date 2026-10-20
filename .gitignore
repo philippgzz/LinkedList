@@ -1,0 +1,10 @@
+# Build-Dateien von CMake
+cmake-build-*/
+
+# Benutzerspezifische CLion-Einstellungen
+.idea/
+
+# Persönliche Editor- und Betriebssystemdateien
+*.swp
+.DS_Store
+Thumbs.db

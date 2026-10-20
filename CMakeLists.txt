@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 4.3)
+project(LinkedList C)
+
+set(CMAKE_C_STANDARD 11)
+
+add_executable(LinkedList main.c
+        ll.h
+        ll.c
+        dll.c
+        dll.h)
