@@ -9,8 +9,8 @@ Die Liste besteht aus Knoten. Jeder Knoten speichert einen `double`-Wert und ein
 ## Dateien
 
 - `main.c` – Hauptprogramm zum Testen der Linked List
-- `ll.c` – Implementierung der Linked-List-Funktionen
-- `ll.h` – Definitionen und Funktionsdeklarationen der Linked List
+- `ll/ll.c` – Implementierung der Linked-List-Funktionen
+- `ll/ll.h` – Definitionen und Funktionsdeklarationen der Linked List
 - `CMakeLists.txt` – Konfiguration für den Build mit CMake
 
 ## Projektordner
