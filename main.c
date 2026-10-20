@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <time.h>
 
-#include "ll.h"
-#include "dll.h"
+#include "ll/ll.h"
+#include "dll/dll.h"
 
 int main(void) {
     LL ll_list;
