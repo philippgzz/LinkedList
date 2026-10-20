@@ -19,6 +19,7 @@ typedef struct {
     dll_node *tail;
 } DLL;
 
+
 void dll_init(DLL *list);
 
 bool dll_push_front(DLL *list, double value);
