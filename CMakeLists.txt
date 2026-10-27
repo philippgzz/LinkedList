@@ -13,3 +13,4 @@ add_executable(LinkedList
 add_executable(bitoperationen
         bitoperationen/main.c
 )
+add_executable(regelkreis regelkreis/main.c)
